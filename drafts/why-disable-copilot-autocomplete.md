@@ -1,0 +1,6 @@
+The first feature of CoPilot that made it viral was out of completion. Memes of keyboards that had only one key which is tab appeared. Fast forward several years this feature is now becoming annoying and I've personally disabled it and heard that others did this so as well.
+Personally, it feels the worst when refactoring legacy code. Functions and legacy code of do not follow more than best practices and unfortunately don't have a clear single concern instead they are sometimes spaghetti of different concerns mashed together and the function name often does not resemble the intent. When editing such a function which seems that a large language model trained on open source code can't find a decent match and start suggesting all kinds of gibberish. This is me to another thought which is if you know exactly what you need to do and how you're gonna achieve it you don't really need autocomplete.
+
+For me personally to complete works best for Greenfield projects when I start by defining single purpose small functions that are most definitely implemented by somebody else hundreds of times before me that way the suggestions are quite nice.
+
+Finally, if you feel the same to disable a autocomplete, you need to do the following. TODO the instructions.
