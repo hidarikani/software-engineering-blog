@@ -1,0 +1,15 @@
+# Error Handling Strategies
+
+"Oh no, something went wrong we know about the error and are solving it" — does your application display a similar message it encounters an error? I bet it does. The question is how does your system decide when it's time to display this message or to silently work around work around an issue? Over the years of engineers have tried different approaches that have been extensively documented. An oversimplify recap is that there are two strategies: offensive programming and defensive programming.
+
+The main reasons why an application might want to display an error. Giving an extensive list of all the cases out of scope for this post. Instead, let's focus on one concrete example. First, of all it's narrow the examples to front and quote because these days that's what I'm working mainly working on. Second Many issues arise when fetching data from backend, so let's focus on that searching errors in this post.
+
+Offensive programming is associated with the phrase "fail fast". Using this strategy, code doesn't try to get out of the situation and just exit to this is a friendly message and hopefully it locks the issue in the process so that people are actually do get notified and they do actually start working on the issue.
+
+Defensive programming on the other hand is assuming that it's better to continue even the pictures in complete if some data is missing it will try to substitute the missing values with some defaults. If the data is corrupt it will try to remove to the corrupt item and work on remaining item. There are many creative ways of working around errors.
+
+Now that's the difference between the two strategist has been laid out it's time to talk about why does this matter and what are the long-term implications of using one or the other strategy? Short answer impacts in maintainability and quality over time.
+
+Let's first tackle maintain the ability. Code that fails fast tends to be simpler than code that tries to leave its way out of an issue. That is because failing fast requires minimal logic - if something is wrong stop execution. Working around invalid data on the other hand require s adding additional cases that have to be maintained. Additional cases set up overtime and create higher maintain ability costs.
+
+ Now let's tackle quality. If the code treats data issues as businesses usual then the data providers can be lenient and continue producing sloppy data and the amount of sloppy data tends to accumulate over years. This might create a false sense of confidence — the same the system seems to be operational but tires are recreating under the hood. After operating such a system for several years reflecting it to be failed fast is quite difficult because of several reasons. The first reason is that when you're a factor is to fail fast it will fail immediately because of the older errors. The second reason is that if you decide to persist with their factoring now we have to convince the data provider to reflect all the data that has been accumulated over the years to remove all the errors. To be fair, sometimes you can create a script that would do that automatically.
